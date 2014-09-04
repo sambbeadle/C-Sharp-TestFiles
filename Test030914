@@ -1,4 +1,3 @@
-// You need to create the buttons on the form,13 Buttons, A Label and a Text box
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,17 +13,21 @@ namespace Test_030914
     {
         public Form1()
         {
+            
             InitializeComponent();
         }
+
+        //Here i made a class that allows me to access my variables from anywhere in the program.
         class Variables
         {
+            //Public makes it available, Static means its properties doesnt change and Int or string is the type of variable. (you can also have Bool for Boolean)
            public static int MainValue =0;
            public static string Colour = "Control";
           
         }
         public void Form1_Load(object sender, EventArgs e)
         {
-            
+            //In this Method stub, is the code that is executed when the program is first started
             Variables.MainValue = 0;
             string MainValueText = Variables.MainValue.ToString();
             LblNum.Text = MainValueText;
@@ -35,14 +38,17 @@ namespace Test_030914
 
         public void btnPlus_Click(object sender, EventArgs e)
         {
-            
+            // MainVal++ increases the number by 1
             Variables.MainValue++;
+            //I create a exclusive variable which allows me to convert from number to text (.tostring)
             string MainValueText = Variables.MainValue.ToString();
+            //Sets the Value of the label
             LblNum.Text = MainValueText;
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
+            // MainVal++ decreases the number by 1
             Variables.MainValue--;
             string MainValueText = Variables.MainValue.ToString();
             LblNum.Text = MainValueText;
@@ -50,6 +56,7 @@ namespace Test_030914
 
         private void btnX2_Click(object sender, EventArgs e)
         {
+            // MainVal++ multiplies the number by 2
             Variables.MainValue = Variables.MainValue * 2;
             string MainValueText = Variables.MainValue.ToString();
             LblNum.Text = MainValueText;
@@ -57,6 +64,7 @@ namespace Test_030914
 
         private void btnD2_Click(object sender, EventArgs e)
         {
+            // MainVal++ divides the number by 2
             Variables.MainValue = Variables.MainValue / 2;
             string MainValueText = Variables.MainValue.ToString();
             LblNum.Text = MainValueText;
@@ -64,6 +72,7 @@ namespace Test_030914
 
         private void btnD10_Click(object sender, EventArgs e)
         {
+            // MainVal++ multiplies the number by 10
             Variables.MainValue = Variables.MainValue / 10;
             string MainValueText = Variables.MainValue.ToString();
             LblNum.Text = MainValueText;
@@ -71,6 +80,7 @@ namespace Test_030914
 
         private void btnX10_Click(object sender, EventArgs e)
         {
+            // MainVal++ divides the number by 10
             Variables.MainValue = Variables.MainValue * 10;
             string MainValueText = Variables.MainValue.ToString();
             LblNum.Text = MainValueText;
