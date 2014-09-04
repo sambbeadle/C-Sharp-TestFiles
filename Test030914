@@ -1,0 +1,133 @@
+// You need to create the buttons on the form,13 Buttons, A Label and a Text box
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Test_030914
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        class Variables
+        {
+           public static int MainValue =0;
+           public static string Colour = "Control";
+          
+        }
+        public void Form1_Load(object sender, EventArgs e)
+        {
+            
+            Variables.MainValue = 0;
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+
+            
+
+        }
+
+        public void btnPlus_Click(object sender, EventArgs e)
+        {
+            
+            Variables.MainValue++;
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            Variables.MainValue--;
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+        }
+
+        private void btnX2_Click(object sender, EventArgs e)
+        {
+            Variables.MainValue = Variables.MainValue * 2;
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+        }
+
+        private void btnD2_Click(object sender, EventArgs e)
+        {
+            Variables.MainValue = Variables.MainValue / 2;
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+        }
+
+        private void btnD10_Click(object sender, EventArgs e)
+        {
+            Variables.MainValue = Variables.MainValue / 10;
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+        }
+
+        private void btnX10_Click(object sender, EventArgs e)
+        {
+            Variables.MainValue = Variables.MainValue * 10;
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+        }
+
+        private void btnNeg_Click(object sender, EventArgs e)
+        {
+            Variables.MainValue = (-Variables.MainValue);
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+        }
+
+        private void btnPos_Click(object sender, EventArgs e)
+        {
+            Variables.MainValue = (+Variables.MainValue);
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+        }
+
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            int SetTo;
+          SetTo = Convert.ToInt32(txtSet.Text);
+          Variables.MainValue = SetTo;
+            string MainValueText = Variables.MainValue.ToString();
+            LblNum.Text = MainValueText;
+            txtSet.Text = string.Empty;
+        }
+
+        private void btnBgBlack_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Black;
+            LblNum.ForeColor = Color.White;
+
+
+        }
+
+        private void btnBgWhite_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.White;
+            LblNum.ForeColor = Color.Black;
+        }
+
+        private void btnBgRed_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Red;
+                LblNum.ForeColor = Color.White;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.FromName("Control");
+            LblNum.ForeColor = Color.Black;
+
+        }
+
+       
+    }
+}
