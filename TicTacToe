@@ -16,8 +16,9 @@ namespace Tic_Tac_Toe
             InitializeComponent();
         }
 
-        class Variables
+        public class Variables
         {
+            public static bool GameOver = false;
             public static int click1 = 0;
             public static int click2 = 0;
             public static int click3 = 0;
@@ -30,7 +31,10 @@ namespace Tic_Tac_Toe
             public static int turn = 1;
             public static int player1 = 0;
             public static int player2 = 0;
+            public static string player1name = "Player 1";
+            public static string player2name = "Player 2";
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -238,22 +242,22 @@ namespace Tic_Tac_Toe
             display();
             checkit();
         }
+       
         public void display()
         {
             if (Variables.turn % 2 != 0)
             {
-                displayturn.Text = "Player 1";
+                displayturn.Text = Variables.player1name;
             }
             else
             {
-                displayturn.Text = "Player 2";
+                displayturn.Text = Variables.player2name;
             }
         }
         public void checkit()
         {
-            if (button1.Text != "" && button2.Text != "" && button3.Text != "")
-            {
-                if (button1.Text == button2.Text && button1.Text == button3.Text)
+            
+                if (button1.Text == button2.Text && button2.Text == button3.Text && button1.Text != "")
                 {
                     button1.BackColor = Color.Green;
                     button1.ForeColor = Color.White;
@@ -263,23 +267,201 @@ namespace Tic_Tac_Toe
                     button3.ForeColor = Color.White;
                     if (button1.Text == "X")
                     {
-                        MessageBox.Show("Player 1 Wins!");
+                        
+                        MessageBox.Show(Variables.player1name + " Wins!");
                         Variables.player1++;
                         player1score.Text = Variables.player1.ToString();
+                        Variables.GameOver = true;
                     }
                     else
                     {
-                        MessageBox.Show("Player 2 Wins!");
+                        MessageBox.Show(Variables.player2name + " Wins!");
                         Variables.player2++;
                         player2score.Text = Variables.player2.ToString();
+                        Variables.GameOver = true;
                     }
-                    cleargame();
+                  
                 }
-            }
+                if (button1.Text == button4.Text && button4.Text == button7.Text && button1.Text != "")
+                {
+                    button1.BackColor = Color.Green;
+                    button1.ForeColor = Color.White;
+                    button4.BackColor = Color.Green;
+                    button4.ForeColor = Color.White;
+                    button7.BackColor = Color.Green;
+                    button7.ForeColor = Color.White;
+                    if (button1.Text == "X")
+                    {
+                        MessageBox.Show(Variables.player1name + " Wins!");
+                        Variables.player1++;
+                        player1score.Text = Variables.player1.ToString();
+                        Variables.GameOver = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show(Variables.player2name + " Wins!");
+                        Variables.player2++;
+                        player2score.Text = Variables.player2.ToString();
+                        Variables.GameOver = true;
+                    }
+                   
+                }
+                if (button4.Text == button5.Text && button5.Text == button6.Text && button4.Text != "")
+                {
+                    button4.BackColor = Color.Green;
+                    button4.ForeColor = Color.White;
+                    button5.BackColor = Color.Green;
+                    button5.ForeColor = Color.White;
+                    button6.BackColor = Color.Green;
+                    button6.ForeColor = Color.White;
+                    if (button4.Text == "X")
+                    {
+                        MessageBox.Show(Variables.player1name + " Wins!");
+                        Variables.player1++;
+                        player1score.Text = Variables.player1.ToString();
+                        Variables.GameOver = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show(Variables.player2name + " Wins!");
+                        Variables.player2++;
+                        player2score.Text = Variables.player2.ToString();
+                        Variables.GameOver = true;
+                    }
+                }
+                    
+                    if (button7.Text == button8.Text && button8.Text == button9.Text && button7.Text != "")
+                {
+                    button7.BackColor = Color.Green;
+                    button7.ForeColor = Color.White;
+                    button8.BackColor = Color.Green;
+                    button8.ForeColor = Color.White;
+                    button9.BackColor = Color.Green;
+                    button9.ForeColor = Color.White;
+                    if (button7.Text == "X")
+                    {
+                        MessageBox.Show(Variables.player1name + " Wins!");
+                        Variables.player1++;
+                        player1score.Text = Variables.player1.ToString();
+                        Variables.GameOver = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show(Variables.player2name + " Wins!");
+                        Variables.player2++;
+                        player2score.Text = Variables.player2.ToString();
+                        Variables.GameOver = true;
+                    }
+                    }
+ if (button2.Text == button5.Text && button5.Text == button8.Text && button2.Text != "")
+ {
+     button2.BackColor = Color.Green;
+     button2.ForeColor = Color.White;
+     button5.BackColor = Color.Green;
+     button5.ForeColor = Color.White;
+     button8.BackColor = Color.Green;
+     button8.ForeColor = Color.White;
+     if (button2.Text == "X")
+     {
+         MessageBox.Show(Variables.player1name + " Wins!");
+         Variables.player1++;
+         player1score.Text = Variables.player1.ToString();
+         Variables.GameOver = true;
+     }
+     else
+     {
+         MessageBox.Show(Variables.player2name + " Wins!");
+         Variables.player2++;
+         player2score.Text = Variables.player2.ToString();
+         Variables.GameOver = true;
+     }
+ }
+
+ if (button3.Text == button6.Text && button6.Text == button9.Text && button3.Text != "")
+ {
+     button3.BackColor = Color.Green;
+     button3.ForeColor = Color.White;
+     button6.BackColor = Color.Green;
+     button6.ForeColor = Color.White;
+     button9.BackColor = Color.Green;
+     button9.ForeColor = Color.White;
+     if (button3.Text == "X")
+     {
+         MessageBox.Show(Variables.player1name + " Wins!");
+         Variables.player1++;
+         player1score.Text = Variables.player1.ToString();
+         Variables.GameOver = true;
+     }
+     else
+     {
+         MessageBox.Show(Variables.player2name + " Wins!");
+         Variables.player2++;
+         player2score.Text = Variables.player2.ToString();
+         Variables.GameOver = true;
+     }
+ }
+ if (button1.Text == button5.Text && button5.Text == button9.Text && button9.Text != "")
+ {
+     button1.BackColor = Color.Green;
+     button1.ForeColor = Color.White;
+     button5.BackColor = Color.Green;
+     button5.ForeColor = Color.White;
+     button9.BackColor = Color.Green;
+     button9.ForeColor = Color.White;
+     if (button1.Text == "X")
+     {
+         MessageBox.Show(Variables.player1name + " Wins!");
+         Variables.player1++;
+         player1score.Text = Variables.player1.ToString();
+         Variables.GameOver = true;
+     }
+     else
+     {
+         MessageBox.Show(Variables.player2name + " Wins!");
+         Variables.player2++;
+         player2score.Text = Variables.player2.ToString();
+         Variables.GameOver = true;
+     }
+ }
+ if (button3.Text == button5.Text && button5.Text == button7.Text && button3.Text != "")
+ {
+     button3.BackColor = Color.Green;
+     button3.ForeColor = Color.White;
+     button5.BackColor = Color.Green;
+     button5.ForeColor = Color.White;
+     button7.BackColor = Color.Green;
+     button7.ForeColor = Color.White;
+     if (button3.Text == "X")
+     {
+         MessageBox.Show(Variables.player1name + " Wins!");
+         Variables.player1++;
+         player1score.Text = Variables.player1.ToString();
+         Variables.GameOver = true;
+     }
+     else
+     {
+         MessageBox.Show(Variables.player2name + " Wins!");
+         Variables.player2++;
+         player2score.Text = Variables.player2.ToString();
+         Variables.GameOver = true;
+     }
+ }
+              if (Variables.GameOver == true)
+                    {
+                        cleargame();
+                    }
+                                              
+                             if (Variables.GameOver == true)
+                    {
+                        cleargame();
+                    }
+                
+            
         }
+                     
         public void cleargame()
         {
-
+            Variables.GameOver = false;
             Variables.click1 = 0;
             Variables.click2 = 0;
             Variables.click3 = 0;
@@ -290,8 +472,58 @@ namespace Tic_Tac_Toe
             Variables.click8 = 0;
             Variables.click9 = 0;
             Variables.turn = 0;
-            Variables.player1 = 0;
-            Variables.player2 = 0;
+                button1.Text = "";
+                button1.ForeColor = Color.Black;
+                button1.BackColor = Color.FromName("Control");
+                button2.Text = "";
+                button2.ForeColor = Color.Black;
+                button2.BackColor = Color.FromName("Control");
+                button3.Text = "";
+                button3.ForeColor = Color.Black;
+                button3.BackColor = Color.FromName("Control");
+                button4.Text = "";
+                button4.ForeColor = Color.Black;
+                button4.BackColor = Color.FromName("Control");
+                button5.Text = "";
+                button5.ForeColor = Color.Black;
+                button5.BackColor = Color.FromName("Control");
+                button6.Text = "";
+                button6.ForeColor = Color.Black;
+                button6.BackColor = Color.FromName("Control");
+                button7.Text = "";
+                button7.ForeColor = Color.Black;
+                button7.BackColor = Color.FromName("Control");
+                button8.Text = "";
+                button8.ForeColor = Color.Black;
+                button8.BackColor = Color.FromName("Control");
+                button9.Text = "";
+                button9.ForeColor = Color.Black;
+                button9.BackColor = Color.FromName("Control");
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            cleargame();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            
+           
+           
+            Form2 EnterName = new Form2();
+            EnterName.ShowDialog();
+ PlayerName1.Text = Variables.player1name;
+            PlayerName2.Text = Variables.player2name;
+ button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = true;
+            button7.Enabled = true;
+            button8.Enabled = true;
+            button9.Enabled = true;
         }
 
         
@@ -300,4 +532,41 @@ namespace Tic_Tac_Toe
 
     }
 
+}
+
+//----------------------------------------------------------------------------------- Form2 Begin here.
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Tic_Tac_Toe
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (player1name.Text == "" && player2name.Text == "")
+            {
+                Form1.Variables.player1name = "Player 1";
+                Form1.Variables.player2name = "Player 2";
+            }
+            else if (player1name.Text != "" && player2name.Text != "")
+            {
+            Form1.Variables.player1name = player1name.Text;
+            Form1.Variables.player2name = player2name.Text;
+        }
+            Close();
+
+        }
+    }
 }
