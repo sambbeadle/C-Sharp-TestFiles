@@ -27,11 +27,11 @@ namespace Tic_Tac_Toe
             public static int click7 = 0;
             public static int click8 = 0;
             public static int click9 = 0;
-            public static int turn = 0;
+            public static int turn = 1;
             public static int player1 = 0;
             public static int player2 = 0;
         }
-        void Button1Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
             if (Variables.click1 == 0)
@@ -54,7 +54,7 @@ namespace Tic_Tac_Toe
             display();
             checkit();
         }
-        void Button2Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
             if (Variables.click2 == 0)
@@ -77,7 +77,7 @@ namespace Tic_Tac_Toe
             display();
             checkit();
         }
-        void Button3Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
             if (Variables.click3 == 0)
@@ -100,7 +100,7 @@ namespace Tic_Tac_Toe
             display();
             checkit();
         }
-        void Button4Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
 
             if (Variables.click4 == 0)
@@ -123,7 +123,7 @@ namespace Tic_Tac_Toe
             display();
             checkit();
         }
-        void Button5Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
 
             if (Variables.click5 == 0)
@@ -146,7 +146,7 @@ namespace Tic_Tac_Toe
             display();
             checkit();
         }
-        void Button6Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
 
             if (Variables.click6 == 0)
@@ -169,7 +169,7 @@ namespace Tic_Tac_Toe
             display();
             checkit();
         }
-        void Button7Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
 
             if (Variables.click7 == 0)
@@ -192,7 +192,7 @@ namespace Tic_Tac_Toe
             display();
             checkit();
         }
-        void Button8Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
 
             if (Variables.click8 == 0)
@@ -215,7 +215,7 @@ namespace Tic_Tac_Toe
             display();
             checkit();
         }
-        void Button9Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
 
             if (Variables.click9 == 0)
@@ -294,6 +294,9 @@ namespace Tic_Tac_Toe
             Variables.player2 = 0;
         }
 
+        
+
+       
 
     }
 
