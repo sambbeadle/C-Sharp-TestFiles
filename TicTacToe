@@ -1,0 +1,300 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Tic_Tac_Toe
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        class Variables
+        {
+            public static int click1 = 0;
+            public static int click2 = 0;
+            public static int click3 = 0;
+            public static int click4 = 0;
+            public static int click5 = 0;
+            public static int click6 = 0;
+            public static int click7 = 0;
+            public static int click8 = 0;
+            public static int click9 = 0;
+            public static int turn = 0;
+            public static int player1 = 0;
+            public static int player2 = 0;
+        }
+        void Button1Click(object sender, EventArgs e)
+        {
+
+            if (Variables.click1 == 0)
+            {
+                if (Variables.turn % 2 != 0)
+                {
+                    button1.Text = "X";
+                }
+                else
+                {
+                    button1.Text = "O";
+                }
+                Variables.turn++;
+                Variables.click1++;
+            }
+            else
+            {
+                button1.Text = button1.Text;
+            }
+            display();
+            checkit();
+        }
+        void Button2Click(object sender, EventArgs e)
+        {
+
+            if (Variables.click2 == 0)
+            {
+                if (Variables.turn % 2 != 0)
+                {
+                    button2.Text = "X";
+                }
+                else
+                {
+                    button2.Text = "O";
+                }
+                Variables.turn++;
+                Variables.click2++;
+            }
+            else
+            {
+                button2.Text = button2.Text;
+            }
+            display();
+            checkit();
+        }
+        void Button3Click(object sender, EventArgs e)
+        {
+
+            if (Variables.click3 == 0)
+            {
+                if (Variables.turn % 2 != 0)
+                {
+                    button3.Text = "X";
+                }
+                else
+                {
+                    button3.Text = "O";
+                }
+                Variables.turn++;
+                Variables.click3++;
+            }
+            else
+            {
+                button3.Text = button3.Text;
+            }
+            display();
+            checkit();
+        }
+        void Button4Click(object sender, EventArgs e)
+        {
+
+            if (Variables.click4 == 0)
+            {
+                if (Variables.turn % 2 != 0)
+                {
+                    button4.Text = "X";
+                }
+                else
+                {
+                    button4.Text = "O";
+                }
+                Variables.turn++;
+                Variables.click4++;
+            }
+            else
+            {
+                button4.Text = button4.Text;
+            }
+            display();
+            checkit();
+        }
+        void Button5Click(object sender, EventArgs e)
+        {
+
+            if (Variables.click5 == 0)
+            {
+                if (Variables.turn % 2 != 0)
+                {
+                    button5.Text = "X";
+                }
+                else
+                {
+                    button5.Text = "O";
+                }
+                Variables.turn++;
+                Variables.click5++;
+            }
+            else
+            {
+                button5.Text = button5.Text;
+            }
+            display();
+            checkit();
+        }
+        void Button6Click(object sender, EventArgs e)
+        {
+
+            if (Variables.click6 == 0)
+            {
+                if (Variables.turn % 2 != 0)
+                {
+                    button6.Text = "X";
+                }
+                else
+                {
+                    button6.Text = "O";
+                }
+                Variables.turn++;
+                Variables.click6++;
+            }
+            else
+            {
+                button6.Text = button6.Text;
+            }
+            display();
+            checkit();
+        }
+        void Button7Click(object sender, EventArgs e)
+        {
+
+            if (Variables.click7 == 0)
+            {
+                if (Variables.turn % 2 != 0)
+                {
+                    button7.Text = "X";
+                }
+                else
+                {
+                    button7.Text = "O";
+                }
+                Variables.turn++;
+                Variables.click7++;
+            }
+            else
+            {
+                button7.Text = button7.Text;
+            }
+            display();
+            checkit();
+        }
+        void Button8Click(object sender, EventArgs e)
+        {
+
+            if (Variables.click8 == 0)
+            {
+                if (Variables.turn % 2 != 0)
+                {
+                    button8.Text = "X";
+                }
+                else
+                {
+                    button8.Text = "O";
+                }
+                Variables.turn++;
+                Variables.click8++;
+            }
+            else
+            {
+                button8.Text = button8.Text;
+            }
+            display();
+            checkit();
+        }
+        void Button9Click(object sender, EventArgs e)
+        {
+
+            if (Variables.click9 == 0)
+            {
+                if (Variables.turn % 2 != 0)
+                {
+                    button9.Text = "X";
+                }
+                else
+                {
+                    button9.Text = "O";
+                }
+                Variables.turn++;
+                Variables.click9++;
+            }
+            else
+            {
+                button9.Text = button9.Text;
+            }
+            display();
+            checkit();
+        }
+        public void display()
+        {
+            if (Variables.turn % 2 != 0)
+            {
+                displayturn.Text = "Player 1";
+            }
+            else
+            {
+                displayturn.Text = "Player 2";
+            }
+        }
+        public void checkit()
+        {
+            if (button1.Text != "" && button2.Text != "" && button3.Text != "")
+            {
+                if (button1.Text == button2.Text && button1.Text == button3.Text)
+                {
+                    button1.BackColor = Color.Green;
+                    button1.ForeColor = Color.White;
+                    button2.BackColor = Color.Green;
+                    button2.ForeColor = Color.White;
+                    button3.BackColor = Color.Green;
+                    button3.ForeColor = Color.White;
+                    if (button1.Text == "X")
+                    {
+                        MessageBox.Show("Player 1 Wins!");
+                        Variables.player1++;
+                        player1score.Text = Variables.player1.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Player 2 Wins!");
+                        Variables.player2++;
+                        player2score.Text = Variables.player2.ToString();
+                    }
+                    cleargame();
+                }
+            }
+        }
+        public void cleargame()
+        {
+
+            Variables.click1 = 0;
+            Variables.click2 = 0;
+            Variables.click3 = 0;
+            Variables.click4 = 0;
+            Variables.click5 = 0;
+            Variables.click6 = 0;
+            Variables.click7 = 0;
+            Variables.click8 = 0;
+            Variables.click9 = 0;
+            Variables.turn = 0;
+            Variables.player1 = 0;
+            Variables.player2 = 0;
+        }
+
+
+    }
+
+}
